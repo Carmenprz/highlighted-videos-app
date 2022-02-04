@@ -2,8 +2,8 @@
 
 ## About
 
-React application for display videos. 
-This is a project created in order to learn ReactJS. 
+React application to display videos.
+This is a project created in order to learn ReactJS.
 
 ### Features
 
