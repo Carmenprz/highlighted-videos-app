@@ -11,19 +11,27 @@ class List extends Component {
         super(props);
         this.state = {
             isLoading: false,
-            videos: null
+            videos: null,
+            error: null
         };
     }
-    componentDidMount() {
-        this.setState({isLoading:true});
-        getVideos().then(data => {
-            this.setState({ isLoading: false , videos:data})
-        });
+    async componentDidMount() {
+        this.setState({ isLoading: true });
+
+        try{
+            const videos = await getVideos();
+            this.setState({ videos , isLoading: false });
+        } catch(error) {
+            this.setState({ error, isLoading: false });
+        }
     }
     render() {
-        const {videos, isLoading} = this.state;
-        if(isLoading) {
+        const {videos, isLoading, error} = this.state;
+        if (isLoading) {
             return <Loading message="Loading..."/>
+        }
+        if (error) {
+            return <p className="error" >{error.message}</p>
         }
         return (<React.Fragment>
             <Header />
@@ -34,7 +42,7 @@ class List extends Component {
                             return (<Item key={i} data={video}/>)
                         })
                     }
-                </div> 
+                </div>
             </div>
             <Footer />
         </React.Fragment>);
