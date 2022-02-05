@@ -43,7 +43,7 @@ text-align: center;
 .header-button-add {
 	float: right;
 	margin: 18px;
-	
+
 }
 
 footer {
@@ -129,7 +129,7 @@ footer {
 /** MODAL **/
 /* The Modal (background) */
 .modal {
-    display:block;  
+    display:block;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
