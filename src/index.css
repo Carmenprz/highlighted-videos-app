@@ -97,7 +97,7 @@ footer {
 }
 
 /* Zoom in Keyframes */
-@-webkit-keyframes blureffect {
+@keyframes blureffect {
  0% { -webkit-filter: blur(10px);}
 50% { -webkit-filter: blur(5px);}
 100% { -webkit-filter: blur(0px);}
